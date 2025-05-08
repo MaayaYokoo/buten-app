@@ -29,7 +29,9 @@ export const InputText = (props) => {
     }
     const passText = async () => {
         const data = await searchItem(text);
-        handleSetTenkiJson(data);
+        if (data) handleSetTenkiJson(data);
+        else console.error("検索結果が取得できませんでした");
+
     };
 
     return(
