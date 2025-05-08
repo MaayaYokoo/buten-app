@@ -7,13 +7,14 @@ function App() {
     const [text, setText] = useState("");
     const onChangeText = (event) => setText(event.target.value);
 
-    const [tenkiJson, setTenkiJson] = useState("");
+    const [tenkiJson, setTenkiJson] = useState({ data: null, error: null });
     const handleSetTenkiJson = (newValue) => {
-        setTenkiJson(newValue);
-        // useEffect(() => {
-        //     console.log("天気json出力確認 (更新後)", tenkiJson);
-        // }, [tenkiJson]); // ✅ `tenkiJson` の値が更新されたときにログ出力！
-        
+        if(newValue === "error") { 
+            setTenkiJson({ data: null, error: newValue })
+        } else {
+            setTenkiJson({ data: newValue, error: null });
+        }
+        // setTenkiJson(newValue);
     };
 
     return (

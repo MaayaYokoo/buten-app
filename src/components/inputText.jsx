@@ -5,6 +5,8 @@ import jsonData from './../area_code.json';
 export const InputText = (props) => {
     // const { text, onChange, searchItem, tenkiJson} = props;
     const { text, onChange, handleSetTenkiJson} = props;
+    const todoufuKen = jsonData.map((item) => item.prefecture);
+    console.log("都道府県一覧", todoufuKen);
     
     const searchItem = async (handleValueChange) => {
             const muchArea = jsonData.find( ({ prefecture }) => prefecture == handleValueChange );
@@ -29,18 +31,19 @@ export const InputText = (props) => {
     }
     const passText = async () => {
         const data = await searchItem(text);
+        // const data = "";
         if (data) handleSetTenkiJson(data);
-        else console.error("検索結果が取得できませんでした");
+        else handleSetTenkiJson("error");
 
     };
 
     return(
         <>
-            <input 
-                placeholder="都道府県を入力" 
-                // value={text} 
-                onChange={onChange} 
-            />
+            <select onChange={onChange}>
+                {todoufuKen.map((todoufuKen) => {
+                    return <option key={todoufuKen}>{todoufuKen}</option>;
+                })}
+            </select>
             <button onClick={passText}>検索！</button>
         </>
     );
