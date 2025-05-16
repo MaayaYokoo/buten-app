@@ -1,36 +1,20 @@
 import './App.css';
 import React, { useState } from "react";
-import { InputText } from './components/inputText';
-import { RenderTenki } from './components/renderTenki';
+// import { InputText } from './components/inputText';
+// import { RenderTenki } from './components/renderTenki';
+import { Routes, Route } from "react-router-dom"; 
+import { Home } from './pages/home'
+import { TenkiPage } from './pages/tenkiPage'
 
 function App() {
-    const [text, setText] = useState("");
-    const onChangeText = (event) => setText(event.target.value);
-
-    const [tenkiJson, setTenkiJson] = useState({ data: null, error: null });
-    const handleSetTenkiJson = (newValue) => {
-        if(newValue === "error") { 
-            setTenkiJson({ data: null, error: newValue })
-        } else {
-            setTenkiJson({ data: newValue, error: null });
-        }
-        // setTenkiJson(newValue);
-    };
-
     return (
         <div>
-            <InputText 
-                text={text}
-                onChange={onChangeText}
-                handleSetTenkiJson={handleSetTenkiJson}
-            />
-            {tenkiJson ? (
-            <RenderTenki 
-                tenkiData={tenkiJson}
-            />
-            ) : (
-                ""
-            )}
+            <h1>共通パーツです</h1>
+            <Routes>
+                <Route path="/" element={ <Home /> } />
+                <Route path="/TenkiPage" element={<TenkiPage />} />
+            </Routes>
+
         </div>
     );
 }

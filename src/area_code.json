@@ -1,5 +1,9 @@
 [
     {
+        "prefecture": "",
+        "area_code": ""
+    },
+    {
         "prefecture": "北海道",
         "area_code": "016000"
     },
