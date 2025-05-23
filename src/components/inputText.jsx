@@ -1,15 +1,12 @@
 // import React from "react";
 import React, { useState } from "react";
 import jsonData from './../area_code.json';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export const InputText = (props) => {
-    // const { text, onChange, searchItem, tenkiJson} = props;
-    // const { text, onChange, handleSetTenkiJson} = props;
     const navigate = useNavigate();
 
-    // const { text, onChange} = props;
     const [text, setText] = useState("");
     const onChangeText = (event) => setText(event.target.value);
 
@@ -17,16 +14,6 @@ export const InputText = (props) => {
     console.log("都道府県一覧", todoufuKen);
 
     const [enpty, setEnpty] = useState(false);
-
-    const [tenkiJson, setTenkiJson] = useState({ data: null, error: null });
-    const handleSetTenkiJson = (newValue) => {
-        if(newValue === "error") { 
-            setTenkiJson({ data: null, error: newValue })
-        } else {
-            setTenkiJson({ data: newValue, error: null });
-        }
-        // setTenkiJson(newValue);
-    };
     
     const searchItem = async (handleValueChange) => {
             const muchArea = jsonData.find( ({ prefecture }) => prefecture == handleValueChange );
@@ -52,17 +39,10 @@ export const InputText = (props) => {
     const passText = async () => {
         if(text) {
             const data = await searchItem(text);
-            handleSetTenkiJson(data);
-            console.log("setTenkiJson", setTenkiJson);
-            console.log("tenkiJson", tenkiJson);
-            // const data = "";
             if (data)  {
-                // handleSetTenkiJson(data);
-                navigate("/TenkiPage", { state: { tenkiData: data } });
-
+                navigate("/tenkiPage", { state: { tenkiData: data, todoufuken: text } });
             } else {
-                // handleSetTenkiJson("error");
-                navigate("/NotFound");
+                navigate("/notFound");
             } 
         } else {
             setEnpty(true);
@@ -78,11 +58,7 @@ export const InputText = (props) => {
                 })}
             </select>
             <button onClick={passText}>検索！</button>
-
             <p>{enpty ? "選択してください" : ""}</p>
-
-            {/* <Link to="/TenkiPage" tenkiData={tenkiJson} onClick={passText}></Link> */}
-            {/* <button onClick={passText}>検索！</button> */}
         </>
     );
 };

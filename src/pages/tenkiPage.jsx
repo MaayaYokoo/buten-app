@@ -11,6 +11,7 @@ export const TenkiPage = () => {
             <h2>天気ページです</h2>
             <RenderTenki 
                 tenkiData={state.tenkiData}
+                todoufuken={state.todoufuken}
             />
             <Link to="/">
                 <button>トップページへ</button>

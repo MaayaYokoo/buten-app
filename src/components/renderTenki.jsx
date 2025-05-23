@@ -1,5 +1,5 @@
 export const RenderTenki = (props) => {
-    const {tenkiData} = props;
+    const {tenkiData, todoufuken} = props;
     console.log('tenkiData props',props);
     let renderText = "";
     let renderKion = "";
@@ -13,9 +13,8 @@ export const RenderTenki = (props) => {
     }
     return(
         <>
-        {/* <h1>{!tenkiData.data && !tenkiData.error ? "" : renderText}</h1> */}
-        <h1>{renderText}</h1>
-        
+        <h2>現在の{todoufuken}は...</h2>
+        <h2>{renderText}</h2>
         <h2>{!renderKion ? "" : `${renderKion}°`}</h2>
         </>
     );

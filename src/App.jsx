@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom"; 
 import { Home } from './pages/home'
 import { TenkiPage } from './pages/tenkiPage'
+import { NotFound } from './pages/notFound';
 
 function App() {
     return (
@@ -12,7 +13,8 @@ function App() {
             <h1>共通パーツです</h1>
             <Routes>
                 <Route path="/" element={ <Home /> } />
-                <Route path="/TenkiPage" element={<TenkiPage />} />
+                <Route path="/tenkiPage" element={<TenkiPage />} />
+                <Route path="/notFound" element={<NotFound />} />
             </Routes>
 
         </div>
