@@ -1,3 +1,4 @@
+import "./assets/styles/reset.css";
 import './App.css';
 import React, { useState } from "react";
 // import { InputText } from './components/inputText';
@@ -10,7 +11,6 @@ import { NotFound } from './pages/notFound';
 function App() {
     return (
         <div>
-            <h1>共通パーツです</h1>
             <Routes>
                 <Route path="/" element={ <Home /> } />
                 <Route path="/tenkiPage" element={<TenkiPage />} />

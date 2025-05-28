@@ -1,0 +1,78 @@
+.select-area {
+  padding: 0 16px;
+  margin-top: 174px;
+}
+
+.select-area__caption {
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.select-area__item {
+  background-color: #96D5FF;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 600px;
+  border-radius: 10px;
+  border: solid 1px #75AFD6;
+  color: #555;
+  font-size: 16px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.select-area__item:before {
+  content: "";
+  position: absolute;
+  bottom: -54px;
+  left: 50%;
+  margin-left: -10px;
+  border: 18px solid transparent;
+  border-top: 36px solid #96D5FF;
+  z-index: 2;
+}
+
+.select-area__item:after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  margin-left: -12px;
+  border: 20px solid transparent;
+  border-top: 40px solid #75AFD6;
+  z-index: 1;
+}
+
+.select-area_item--select, .select-area_item--click {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.select-area__item--enpty {
+  font-size: 12px;
+  color: #F30000;
+  margin-top: 5px;
+}
+
+.select-area__item--dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.select-area__item--search {
+  margin: 0 10px;
+}
+
+.moving-pig {
+  text-align: center;
+  margin-top: 52px;
+}
+
+.moving-pig img {
+  max-width: 477px;
+}/*# sourceMappingURL=top.css.map */

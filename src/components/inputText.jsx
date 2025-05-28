@@ -1,7 +1,9 @@
 // import React from "react";
+import './../assets/styles/top.css'
 import React, { useState } from "react";
 import jsonData from './../area_code.json';
 import { useNavigate } from 'react-router-dom';
+import { Button, FormControl, FormHelperText, Select, MenuItem } from "@mui/material";
 
 
 export const InputText = (props) => {
@@ -48,17 +50,62 @@ export const InputText = (props) => {
             setEnpty(true);
         }
 
-    };
+    }; 
 
     return(
-        <>
-            <select onChange={onChangeText}>
-                {todoufuKen.map((todoufuKen) => {
-                    return <option key={todoufuKen}>{todoufuKen}</option>;
-                })}
-            </select>
-            <button onClick={passText}>検索！</button>
-            <p>{enpty ? "選択してください" : ""}</p>
-        </>
+        <div className="select-area">
+            <p className='select-area__caption'>\ 場所を選んでぶーさんに聞いてみよう♪ /</p>
+                <div className='select-area__item'>
+                <div className='select-area__item--dropdown'>
+                    <p className='select-area_item--select'>\ セレクト！/</p>
+                    <FormControl fullWidth error={enpty}>
+                    <Select
+                        // labelId="demo-simple-select-label"
+                        // id="demo-simple-select"
+                        // value="10"
+                        // label="Age"
+                        onChange={onChangeText}
+                    >
+                    {/* <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem> */}
+                    {todoufuKen.map((todoufuKen) => {
+                        // return <option key={todoufuKen}>{todoufuKen}</option>;
+                        return <MenuItem value={todoufuKen}>{todoufuKen}</MenuItem>
+                    })}
+                    </Select>
+                    {enpty ? <FormHelperText>選択してほしいぶー！</FormHelperText> : ""}
+                    {/* <FormHelperText>選択してほしいぶー！</FormHelperText> */}
+                    </FormControl>
+
+                    {/* <select onChange={onChangeText}>
+                        {todoufuKen.map((todoufuKen) => {
+                            return <option key={todoufuKen}>{todoufuKen}</option>;
+                        })}
+                    </select> */}
+                    {/* <p className='select-area__item--enpty'>{enpty ? "選択してほしいぶー！" : ""}</p> */}
+                </div>
+                <p>の天気を</p>
+                <div className='select-area__item--search'>
+                    <p className='select-area_item--click'>\ クリック！/</p>
+                    {/* <Button css={button_style} onClick={passText}>検索！</Button> */}
+                    <Button sx={{
+                            backgroundColor: "#ffffff",
+                            border: "solid 1px #333333",
+                            color: "#333333",
+                            boxShadow: "0 3px #7DADCC",
+                            "&:hover": {
+                                color: "#2e7d32",
+                                backgroundColor: "#E6FBE7",
+                            }
+                        }} 
+                        onClick={passText}>
+                        検索
+                    </Button>
+
+                </div>
+                <p>する！</p>
+            </div>
+        </div>
     );
 };
