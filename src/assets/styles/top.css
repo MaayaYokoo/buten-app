@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .select-area {
   padding: 0 16px;
   margin-top: 174px;
@@ -5,6 +6,7 @@
 
 .select-area__caption {
   font-size: 20px;
+  font-weight: 700;
   color: #555;
   text-align: center;
   margin-bottom: 10px;
@@ -14,36 +16,36 @@
   background-color: #96D5FF;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   max-width: 600px;
   border-radius: 10px;
   border: solid 1px #75AFD6;
-  color: #555;
   font-size: 16px;
-  padding: 30px;
+  padding: 53px 30px 30px;
   margin: 0 auto;
 }
 
 .select-area__item:before {
   content: "";
   position: absolute;
-  bottom: -54px;
+  bottom: -40px;
   left: 50%;
   margin-left: -10px;
-  border: 18px solid transparent;
-  border-top: 36px solid #96D5FF;
+  border: 13px solid transparent;
+  border-top: 28px solid #96D5FF;
   z-index: 2;
 }
 
 .select-area__item:after {
   content: "";
   position: absolute;
-  bottom: -60px;
+  bottom: -43px;
   left: 50%;
   margin-left: -12px;
-  border: 20px solid transparent;
-  border-top: 40px solid #75AFD6;
-  z-index: 1;
+  border: 15px solid transparent;
+  border-top: 30px solid #75AFD6;
+  z-index: -1;
 }
 
 .select-area_item--select, .select-area_item--click {
@@ -58,14 +60,42 @@
 }
 
 .select-area__item--dropdown {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 160px;
   margin: 0 10px;
 }
 
+.select-area__item--dropdown::before {
+  content: "\\ セレクト！ /";
+  position: absolute;
+  top: -18px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.message::after {
+  content: "選択してほしいぶー！";
+  position: absolute;
+  font-weight: 700;
+  top: 45px;
+  left: 20px;
+}
+
 .select-area__item--search {
+  position: relative;
+  width: 90px;
   margin: 0 10px;
+}
+
+.select-area__item--search::before {
+  content: "\\ クリック！ /";
+  position: absolute;
+  top: -18px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .moving-pig {
