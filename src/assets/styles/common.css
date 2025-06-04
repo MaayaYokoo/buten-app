@@ -21,6 +21,7 @@ body {
   position: absolute;
   left: 0;
   top: 14px;
+  z-index: -1;
 }
 
 .header__container {

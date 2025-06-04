@@ -1,0 +1,70 @@
+.tenki-info {
+  position: relative;
+  background-color: #96D5FF;
+  max-width: 600px;
+  border-radius: 10px;
+  border: solid 1px #75AFD6;
+  text-align: center;
+  padding: 45px 20px;
+  margin: 197px auto 0;
+}
+
+.tenki-info::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 90%;
+  width: 218px;
+  height: 222px;
+  background: url(/src/assets/images/pig.png) no-repeat;
+  background-size: contain;
+}
+
+.tenki-info__todoufuken {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.tenki-info__detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.tenki-info__detail--tenki-icon {
+  width: 30%;
+}
+
+.tenki-info__detail--border {
+  border-left: solid 3px #75AFD6;
+  height: 100px;
+  margin: 0 40px;
+}
+
+.tenki-info__detail--kion {
+  font-size: 40px;
+  font-weight: 700;
+  width: 30%;
+  text-align: left;
+}
+
+.tenki-info__point {
+  position: relative;
+  background-color: #fff;
+  max-width: 412px;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.tenki-info__point:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -6px;
+  border: 6px solid transparent;
+  border-left: 10px solid #fff;
+}/*# sourceMappingURL=tenkiPage.css.map */

@@ -94,6 +94,7 @@
   content: "\\ クリック！ /";
   position: absolute;
   top: -18px;
+  left: 8px;
   font-size: 12px;
   font-weight: 500;
 }

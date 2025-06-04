@@ -5,11 +5,11 @@ import './../assets/styles/common.css'
 export const Header= () => {
     return(
         <header className='header'>
-            <div className='header__container'>
-                <Link to="/" className='header__logo'>
+            <h1 className='header__container'>
+                <Link to="/" className='header__logo' onClick={() => console.log("クリック")}>
                     <img src={logo} alt="ぶーてんロゴ" />
                 </Link>
-            </div>
+            </h1>
         </header>
     );
 }

@@ -6,13 +6,13 @@ import { Header } from './../components/header';
 export const Home = () => {
 
     return (
-        <div>
+        <>
             <Header />
             <InputText />
             <div className='moving-pig'>
                 <img src={movingPig} alt="" />
             </div>
-        </div>
+        </>
     );
 }
 
