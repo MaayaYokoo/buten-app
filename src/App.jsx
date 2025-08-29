@@ -8,14 +8,17 @@ import { Home } from './pages/home'
 import { TenkiPage } from './pages/tenkiPage'
 import { NotFound } from './pages/notFound';
 
-const app_name = "buten-app";
+// const app_name = "buten-app";
 function App() {
     return (
         <div>
             <Routes>
-                <Route path={app_name + "/"} element={ <Home /> } />
+                <Route path="/" element={ <Home /> } />
+                <Route path="/tenkiPage" element={<TenkiPage />} />
+                <Route path="/notFound" element={<NotFound />} />
+                {/* <Route path={app_name + "/"} element={ <Home /> } />
                 <Route path={app_name + "/tenkiPage"} element={<TenkiPage />} />
-                <Route path={app_name + "/notFound"} element={<NotFound />} />
+                <Route path={app_name + "/notFound"} element={<NotFound />} /> */}
             </Routes>
 
         </div>
