@@ -29,7 +29,7 @@ export const TenkiPage = () => {
                         color: "#333333",
                         fontWeight: 700,
                         boxShadow: "0 3px #989589",
-                        margin: "24px auto 0",
+                        margin: "24px auto",
                         "&:hover": {
                             boxShadow: "0"
                         }

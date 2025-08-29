@@ -1,3 +1,8 @@
+.tenki-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 24px;
+}
 .tenki-info {
     position: relative;
     background-color: #96D5FF;
@@ -6,17 +11,7 @@
     border: solid 1px #75AFD6;
     text-align: center;
     padding: 45px 20px;
-    margin: 197px auto 0;
-}
-.tenki-info::before {
-    content: "";
-    position: absolute;
-    top: 60%;
-    left: 90%;
-    width: 218px;
-    height: 222px;
-    background: url(/src/assets/images/pig.png) no-repeat;
-    background-size: contain;
+    margin: 197px 160px 0;
 }
 .tenki-info__todoufuken {
     font-size: 24px;
@@ -28,35 +23,83 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-}
-.tenki-info__detail--tenki-icon {
-    width: 30%;
-}
-.tenki-info__detail--border {
-    border-left: solid 3px #75AFD6;
-    height: 100px;
-    margin: 0 40px;
-}
-.tenki-info__detail--kion {
-    font-size: 40px;
-    font-weight: 700;
-    width: 30%;
-    text-align: left;
+    &--tenki-icon {
+        width: 30%;
+    }
+    &--border {
+        border-left: solid 3px #75AFD6;
+        height: 100px;
+        margin: 0 40px;
+    }
+    &--kion {
+        font-size: 40px;
+        font-weight: 700;
+        width: 30%;
+        text-align: left;
+    }
 }
 .tenki-info__point {
     position: relative;
     background-color: #fff;
     max-width: 412px;
+    width: 70%;
     border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 0 auto;
     padding: 10px 20px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -6px;
+        border: 6px solid transparent;
+        border-left: 10px solid #fff;
+    }
 }
-.tenki-info__point:before {
-    content: "";
+.tenki-info__pig {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-top: -6px;
-    border: 6px solid transparent;
-    border-left: 10px solid #fff;
+    top: 60%;
+    right: -160px;
+    max-width: 218px;
+}
+.tenki-info__pig-sp {
+    display: none;
+}
+@media(max-width: 768px) {
+    .tenki-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tenki-info {
+        margin: 197px 0 24px;
+    }
+    .tenki-info__detail--border {
+        height: 70px;
+    }
+    .tenki-info__detail--kion {
+        font-size: 32px;
+    }
+    .tenki-info__point {
+        width: 100%;
+        font-size: 14px;
+        &::before {
+            content: none;
+        }
+    }
+    .tenki-info__pig {
+        display: none;
+    }
+    .tenki-info__pig-sp {
+        max-width: 300px;
+        width: 65%;
+        display: block;
+    }
+}
+@media(max-width: 550px) {
+    .tenki-info {
+        margin: 66px auto 24px;
+    }
 }

@@ -24,9 +24,9 @@
   font-size: 16px;
   padding: 53px 30px 30px;
   margin: 0 auto;
+  gap: 35px 10px;
 }
-
-.select-area__item:before {
+.select-area__item::before {
   content: "";
   position: absolute;
   bottom: -40px;
@@ -36,8 +36,7 @@
   border-top: 28px solid #96D5FF;
   z-index: 2;
 }
-
-.select-area__item:after {
+.select-area__item::after {
   content: "";
   position: absolute;
   bottom: -43px;
@@ -46,6 +45,18 @@
   border: 15px solid transparent;
   border-top: 30px solid #75AFD6;
   z-index: -1;
+}
+
+.select-area__item-colum {
+  display: flex;
+  flex-direction: row;
+  gap: 35px 10px;
+}
+
+.select-area__item-row {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
 }
 
 .select-area_item--select, .select-area_item--click {
@@ -64,10 +75,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   width: 160px;
-  margin: 0 10px;
 }
-
 .select-area__item--dropdown::before {
   content: "\\ セレクト！ /";
   position: absolute;
@@ -87,9 +97,7 @@
 .select-area__item--search {
   position: relative;
   width: 90px;
-  margin: 0 10px;
 }
-
 .select-area__item--search::before {
   content: "\\ クリック！ /";
   position: absolute;
@@ -105,5 +113,30 @@
 }
 
 .moving-pig img {
+  width: 100%;
   max-width: 477px;
+}
+
+@media (max-width: 550px) {
+  .select-area__item {
+    padding-top: 46px;
+  }
+  .select-area__item-colum {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .select-area__item--search {
+    width: 160px;
+  }
+  .select-area__item--search::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .select-area__caption {
+    font-size: 16px;
+  }
+  .select-area {
+    margin-top: 66px;
+  }
 }/*# sourceMappingURL=top.css.map */
